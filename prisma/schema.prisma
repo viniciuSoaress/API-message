@@ -9,3 +9,20 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  number        Int       @id @unique
+  name          String
+  messageSender Message[] @relation("numberSender")
+  messageFate   Message[] @relation("numberFate")
+}
+
+model Message {
+  id           String   @id @default(uuid())
+  conteudo     String
+  numberSender Int
+  numberfate   Int
+  sender       User     @relation("numberSender", fields: [numberSender], references: [number])
+  fate         User     @relation("numberFate", fields: [numberfate], references: [number])
+  createdAt    DateTime @default(now())
+}
