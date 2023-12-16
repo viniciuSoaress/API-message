@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "tsx watch src/index.ts"
+    "start:dev": "tsx watch src/index.ts",
+    "vercel-build": "prisma generate"
   },
   "keywords": [],
   "author": "",
