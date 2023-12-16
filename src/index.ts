@@ -6,13 +6,17 @@ import { RouterMessage } from './router/RouterMessage'
 
 const app = express()
 
+const port = process.env.PORT || 8182
+
 
 app.use(express.json())
 app.use(cors())
 
+app.get('/', () => 'API em funcionamento')
+
 app.use('/user', UserRouter)
 app.use('/message', RouterMessage)
 
-app.listen(8182, () => {
-  console.log('api em uso')
+app.listen(port, () => {
+  console.log('')
 })
