@@ -4,7 +4,7 @@ import cors from 'cors'
 import { UserRouter } from './router/RouterUser'
 import { RouterMessage } from './router/RouterMessage'
 
-const app = express()
+export const app = express()
 
 const port = process.env.PORT || 8182
 
