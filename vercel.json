@@ -9,7 +9,15 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "src/index.ts"
+    },
+    {
+      "src": "/message/(.*)",
+      "dest": "src/router/RouterMessage.ts"
+    },
+    {
+      "src": "/user/(.*)",
+      "dest": "src/router/RouterUser.ts"
     }
   ],
   "env": {
